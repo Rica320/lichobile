@@ -37,6 +37,9 @@ function renderBody() {
         formWidgets.renderMultipleChoiceButton(i18n('moveListWhilePlaying'), formWidgets.booleanChoice, settings.game.moveList)
       ),
       h('li.list_item',
+        formWidgets.renderMultipleChoiceButton(i18n('showClassification'), formWidgets.booleanChoice, settings.game.classification),
+      ),
+      h('li.list_item',
         formWidgets.renderMultipleChoiceButton(
           i18n('landscapeBoardSide'), [
             { label: i18n('positionLeft'), value: 'left' },

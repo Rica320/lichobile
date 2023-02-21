@@ -21,6 +21,7 @@ export default {
 const prefsCtrl = {
   animation: session.lichessBackedProp<number>('prefs.animation', Animation.NORMAL),
   showCaptured: session.lichessBackedProp<boolean>('prefs.captured', true),
+  showClassification: session.lichessBackedProp<boolean>('prefs.ratings', true),
 }
 
 export function render(ctrl: typeof prefsCtrl) {
@@ -30,6 +31,9 @@ export function render(ctrl: typeof prefsCtrl) {
     ),
     h('li.list_item',
       formWidgets.renderMultipleChoiceButton(i18n('materialDifference'), formWidgets.booleanChoice, ctrl.showCaptured),
+    ),
+    h('li.list_item',
+      formWidgets.renderMultipleChoiceButton(i18n('showPlayerRatings'), formWidgets.booleanChoice, ctrl.showClassification),
     ),
   ]
 }
