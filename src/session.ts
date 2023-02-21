@@ -159,7 +159,7 @@ const savePreferences = throttle((): Promise<string> => {
     'destination',
     'coords',
     'replay',
-    'blindfold'
+    'blindfold',
   ])).reduce(makeReducer('display.'), {}) as Record<string, string>
 
   const behavior = Object.entries(pick(prefs, [
@@ -179,7 +179,8 @@ const savePreferences = throttle((): Promise<string> => {
     'follow',
     'challenge',
     'message',
-    'insightShare'
+    'insightShare',
+    'ratings',
   ])).reduce(makeReducer(''), {}) as Record<string, string>
 
   return fetchText('/account/preferences', {
